@@ -8,10 +8,11 @@ public class Caballos {
      
     /**
      * @param args the command line arguments
+     * @throws java.lang.InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
        
-        int c=2;
+        int c=4;
         int m=60;
         int hipodromo[][] = new int[c][m];
         int posicion[]=new int[c];
@@ -47,7 +48,7 @@ public class Caballos {
         dibujarmatriz(posicion,hipodromo);
         for (int i = 0; i < c; i++) {
             if (posicion[i]>meta) {
-                 System.out.println(" primer caballo en llegar a la meta "+i);
+                 System.out.println(" primer caballo en llegar a la meta "+(i+1));
                  flag=true;
             }
             else  posicion=modpos(posicion, meta);
