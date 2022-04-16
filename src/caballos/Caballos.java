@@ -11,9 +11,18 @@ public class Caballos {
      * @throws java.lang.InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
-       
-        int c=4;
-        int m=60;
+       //recibe las entradas como string
+       String caba =args[0];           
+       String hipo   =args[1];
+       //cambiar de string a enteros y decimales
+      int ic = Integer.parseInt(caba);
+      int im = Integer.parseInt(hipo);
+     
+      int c=ic;
+      int m=im;
+      
+      //int c=4;
+      //int m=50;
         int hipodromo[][] = new int[c][m];
         int posicion[]=new int[c];
         boolean flag=false;//para saber si un caballo pasó o llego a la meta
