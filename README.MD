@@ -3,7 +3,7 @@ y de x cantidad de caballos
 
 variables de entrada:
 c=cantidad de caballos
-m=largo del hipodromo(se recomienda un valor entero entre 40 a 80 para una correcta visualizacion)
+m=largo del hipodromo(se recomienda un valor entero entre 40 a 70 para una correcta visualizacion)
 
 el programa consiste en poner los caballos en el punto de partida y que estos avancen en turnos una cantidad randomicas de posiciones hacia adelante, el o los primeros en pasar la meta son los ganadores
 
@@ -71,7 +71,7 @@ Para la ejecución del algoritmo se deben seguir los siguientes pasos:
 
                 javac Caballos.java
                
-- Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada mencionados anteriormente como por ejemplo:
+- Una vez compilado el programa se debe ejecutar ingresando los parametros de entrada cantidad de caballos y lago del hipodromo como por ejemplo:
 
                 java Main 4 50
 
