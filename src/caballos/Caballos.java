@@ -12,17 +12,17 @@ public class Caballos {
      */
     public static void main(String[] args) throws InterruptedException {
        //recibe las entradas como string
-       String caba =args[0];           
-       String hipo   =args[1];
+      String caba =args[0];           
+      String hipo   =args[1];
        //cambiar de string a enteros y decimales
       int ic = Integer.parseInt(caba);
       int im = Integer.parseInt(hipo);
      
+   //   int c=4;
+     // int m=40;
+      
       int c=ic;
       int m=im;
-      
-      //int c=4;
-      //int m=50;
         int hipodromo[][] = new int[c][m];
         int posicion[]=new int[c];
         boolean flag=false;//para saber si un caballo pasó o llego a la meta
@@ -33,7 +33,7 @@ public class Caballos {
         for (int i = 0; i < posicion.length; i++) {
             posicion[i]=0;
         }
-     
+     /*
        //asignamos la matriz y caballos y la posicion de la meta
         for (int i = 0; i < c; i++) {
              for (int j = 0; j < m; j++) {
@@ -42,7 +42,7 @@ public class Caballos {
                 }else hipodromo[i][j]=1;//asignamos la meta como un 1
             }
             hipodromo[i][0]=1;//iniciMOs los caballos en la partida
-        }
+        }*/
         //mostrar matriz y caballos
         //System.out.println("hipodromo con pocisiones iniciales");
         System.out.println("☻=Caballo  0=pocicion vacia  1=Meta ");
@@ -53,7 +53,7 @@ public class Caballos {
 
     while(flag==false){//vamos comprobando si hay ganadores
         System.out.println("Corriendo... ");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         dibujarmatriz(posicion,hipodromo);
         for (int i = 0; i < c; i++) {
             if (posicion[i]>meta) {
@@ -66,12 +66,6 @@ public class Caballos {
         
     }
      
-    
-    
-    //ver posicion
-     //   for (int i = 0; i <posicion.length; i++) {
-       //    System.out.println(" "+posicion[i]);
-      //  }
     //dibujamos matriz final
      System.out.println("resultado final  ");
     dibujarmatriz(posicion,hipodromo);
@@ -99,7 +93,7 @@ public class Caballos {
 
     private static int[] modpos(int[] posicion, int meta) {
      for (int i = 0; i < posicion.length; i++) {
-            double aleatorio = Math.random()*5+1;
+            double aleatorio = Math.random()*3+1;
             int r=(int) aleatorio;
                 if (posicion[i]+r<meta) {
                     int pos=posicion[i]+r;
