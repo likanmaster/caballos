@@ -11,17 +11,20 @@ public class Caballos {
      */
     public static void main(String[] args) throws InterruptedException {
        //recibe las entradas como string
-      String caba =args[0];           
+    String caba =args[0];           
       String hipo   =args[1];
        //cambiar de string a enteros y decimales
      int ic = Integer.parseInt(caba);
       int im = Integer.parseInt(hipo);
      
-     //int c=4;
-     //int m=40;
+     
       
       int c=ic;
       int m=im;
+   
+   //int c=4;
+   //int m=40;
+  
         int hipodromo[][] = new int[c][m];
         int posicion[]=new int[c];
         boolean flag=false;//para saber si un caballo pasó o llego a la meta
@@ -42,11 +45,15 @@ public class Caballos {
         Thread.sleep(1000);
         dibujarmatriz(posicion,hipodromo,meta);
         for (int i = 0; i < c; i++) {
+            if (flag==false) {
+                
+            
             if (posicion[i]>meta) {
                  System.out.println(" primer caballo en llegar a la meta "+(i+1));
                  flag=true;
             }
             else  posicion=modpos(posicion, meta);
+            }
         }
     
         
@@ -55,7 +62,7 @@ public class Caballos {
     //dibujamos matriz final
      System.out.println("resultado final  ");
      dibujarmatriz(posicion,hipodromo,meta);
-
+      
 }
 //funciones
 
