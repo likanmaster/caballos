@@ -1,7 +1,7 @@
 package caballos;
 /**
  *
- * @author pc0116
+ * @author likanmaster
  */
 public class Caballos {
      
@@ -14,11 +14,11 @@ public class Caballos {
       String caba =args[0];           
       String hipo   =args[1];
        //cambiar de string a enteros y decimales
-      int ic = Integer.parseInt(caba);
+     int ic = Integer.parseInt(caba);
       int im = Integer.parseInt(hipo);
      
-     // int c=4;
-     // int m=40;
+     //int c=4;
+     //int m=40;
       
       int c=ic;
       int m=im;
@@ -35,14 +35,12 @@ public class Caballos {
     
         //mostrar matriz y caballos
         System.out.println("☻=Caballo  0=pocicion vacia  1=Meta ");
-        mostrarmatriz(hipodromo);//mostramos el hipodromo inicial
-       
-       
+   
        //inicia partida   carrera
     while(flag==false){//vamos comprobando si hay ganadores
         System.out.println("Corriendo... ");
         Thread.sleep(1000);
-        dibujarmatriz(posicion,hipodromo);
+        dibujarmatriz(posicion,hipodromo,meta);
         for (int i = 0; i < c; i++) {
             if (posicion[i]>meta) {
                  System.out.println(" primer caballo en llegar a la meta "+(i+1));
@@ -56,7 +54,7 @@ public class Caballos {
      
     //dibujamos matriz final
      System.out.println("resultado final  ");
-     dibujarmatriz(posicion,hipodromo);
+     dibujarmatriz(posicion,hipodromo,meta);
 
 }
 //funciones
@@ -65,19 +63,6 @@ public class Caballos {
     int meta=m-5;
     return meta;
     };
-
-
-
- private static void mostrarmatriz(int[][] hipodromo) {
-     for (int i = 0; i < hipodromo.length; i++) {
-            for (int j = 0; j < hipodromo[0].length; j++) {
-                 System.out.print(hipodromo[i][j]+" ");
-            }
-             System.out.println(" ");
-     }
-
-
-}
 
     private static int[] modpos(int[] posicion, int meta) {
      for (int i = 0; i < posicion.length; i++) {
@@ -93,14 +78,21 @@ public class Caballos {
     
     }
 
-    private static void dibujarmatriz(int[] posicion, int[][] hipodromo) {
+    private static void dibujarmatriz(int[] posicion, int[][] hipodromo,int meta) {
        
         for (int i = 0; i < posicion.length; i++) {
+           
             for (int j = 0; j < hipodromo[0].length; j++) {
-                hipodromo[i][0]=0;//con esto limpiamos la matriz original  
+                hipodromo[i][0]=0;//con esto limpiamos la matriz original
+                
+               if (meta==j) {
+                   hipodromo[i][j]=1;
+                }
                 if (posicion[i]==j) {
                      System.out.print("☻ ");
-                }else  System.out.print(hipodromo[i][j]+" ");  
+                } else  System.out.print(hipodromo[i][j]+" ");
+                 
+                
             }
              System.out.println(" ");
         }       
