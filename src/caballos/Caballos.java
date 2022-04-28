@@ -28,7 +28,7 @@ public class Caballos {
         int posicion[]=new int[c];//para ir guardando las posiciones de los caballos
         boolean flag=false;//para saber si un caballo pasó o llego a la meta
        
-        int  meta=fun.crearmeta(m); //creamos la meta
+        int  meta=crearmeta(m); //creamos la meta
         System.out.println("meta "+meta);//mostramos donde estará la meta
         //iniciar la posicion caballos en posicion 0
         for (int i = 0; i < posicion.length; i++) {
