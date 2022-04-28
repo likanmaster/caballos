@@ -79,10 +79,13 @@ public class Caballos {
                 hipodromo[i][0]=0;//con esto limpiamos la matriz original
                if (meta==j) {
                    hipodromo[i][j]=1;//agregamos la meta
+                    System.out.print("1");// last update
                 }
                 if (posicion[i]==j) {
                      System.out.print("☻ ");//situamos el caballo
-                } else  System.out.print(" ");//mostramos lo que hay en la posicion     
+                } else  System.out.print(" ");//mostramos lo que hay en la posicion
+                         
+                         
             }
              System.out.println(" ");
         }       
