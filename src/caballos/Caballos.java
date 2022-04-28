@@ -39,7 +39,7 @@ public class Caballos {
        //inicia partida   carrera
         while(flag==false){//vamos comprobando si hay ganadores
             System.out.println("Corriendo... ");
-            Thread.sleep(1000);
+            Thread.sleep(1000/10);
             dibujarmatriz(posicion,hipodromo,meta);
             for (int i = 0; i < c; i++) {
                 if (flag==false) {
