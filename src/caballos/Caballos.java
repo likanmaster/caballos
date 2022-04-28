@@ -82,7 +82,7 @@ public class Caballos {
                 }
                 if (posicion[i]==j) {
                      System.out.print("☻ ");//situamos el caballo
-                } else  System.out.print(hipodromo[i][j]+" ");//mostramos lo que hay en la posicion     
+                } else  System.out.print(" ");//mostramos lo que hay en la posicion     
             }
              System.out.println(" ");
         }       
