@@ -40,18 +40,51 @@ public class Caballos {
         while(flag==false){//vamos comprobando si hay ganadores
             System.out.println("Corriendo... ");
             Thread.sleep(1000);
-            fun.dibujarmatriz(posicion,hipodromo,meta);
+            dibujarmatriz(posicion,hipodromo,meta);
             for (int i = 0; i < c; i++) {
                 if (flag==false) {
                     if (posicion[i]>meta) {
                       System.out.println(" primer caballo en llegar a la meta "+(i+1));
                       flag=true;
-                    }else  posicion=fun.modpos(posicion, meta);
+                    }else  posicion=modpos(posicion, meta);
                 }//fin if de flag
             }//fin if de turnos      
         }//fin while
         //dibujamos matriz final
         System.out.println("resultado final  ");
-        fun.dibujarmatriz(posicion,hipodromo,meta);
+        dibujarmatriz(posicion,hipodromo,meta);
     }
+     //funciones
+     static int crearmeta(int m) {
+      int meta=m-5;
+      return meta;
+    };
+
+    static int[] modpos(int[] posicion, int meta) {//metodo que hace que un caballo se mueva r posiciones adelante
+     for (int i = 0; i < posicion.length; i++) {
+            double aleatorio = Math.random()*3+1;
+            int r=(int) aleatorio;
+                if (posicion[i]+r<meta) {
+                    int pos=posicion[i]+r;
+                    posicion[i]=pos;
+                }else posicion[i]=meta+1;
+            
+     }//fin for
+    return posicion;
+  }//fin modpos
+    
+    static void dibujarmatriz(int[] posicion, int[][] hipodromo,int meta) {
+        for (int i = 0; i < posicion.length; i++) {
+            for (int j = 0; j < hipodromo[0].length; j++) {
+                hipodromo[i][0]=0;//con esto limpiamos la matriz original
+               if (meta==j) {
+                   hipodromo[i][j]=1;//agregamos la meta
+                }
+                if (posicion[i]==j) {
+                     System.out.print("☻ ");//situamos el caballo
+                } else  System.out.print(hipodromo[i][j]+" ");//mostramos lo que hay en la posicion     
+            }
+             System.out.println(" ");
+        }       
+    }   
 }
